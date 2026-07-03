@@ -1,5 +1,8 @@
 package com.mycompany;
 
+import com.microsoft.playwright.options.AriaRole;
+import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
+
 import com.microsoft.playwright.*;
 import org.junit.jupiter.api.*;
 
@@ -40,4 +43,33 @@ public class PlaywrightDemoTest {
             context.close();
         }
     }
+
+    @Test
+    @DisplayName("Should search for a product and verify results")
+    void shouldSearchAndFindProduct() {
+
+        page.navigate("https://ecommerce-playground.lambdatest.io/");
+
+        // Locate the search bar and type the product name
+        page.getByPlaceholder("Search For Products")
+                .first()
+                .fill("HTC");
+
+        // Click the search submit button
+        page.getByRole(AriaRole.BUTTON,
+                new Page.GetByRoleOptions().setName("Search"))
+                .click();
+
+        // Verify the search results header contains the query
+        assertThat(page.locator("h1"))
+                .containsText("Search - HTC");
+
+        // Verify that the product link is visible in the search results
+        assertThat(
+                page.getByRole(AriaRole.LINK,
+                        new Page.GetByRoleOptions().setName("HTC Touch HD"))
+                        .first())
+                .isVisible();
+    }
+
 }
