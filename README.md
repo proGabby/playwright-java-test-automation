@@ -34,7 +34,7 @@ Before getting started, make sure you have the following installed on your machi
 ### Setup
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/test-automation-playwright-java.git
+   git clone https://github.com/proGabby/playwright-java-test-automation.git
    cd test-automation-playwright-java
    ```
 
@@ -54,7 +54,7 @@ mvn exec:java -e -Dexec.mainClass=com.microsoft.playwright.CLI -Dexec.args="inst
 ## 🧪 Project Execution: Local vs Cloud
 
 ### 1. Installation Verification (Smoke Test)
-Run the simple smoke test defined in [`App.java`](file:///Users/applebusstop/Documents/tech-writing/technical_writing_projects/test-automation-playwright-java/playwright-tests/src/main/java/com/mycompany/App.java) to ensure Playwright correctly launches and communicates with a headless browser locally:
+Run the simple smoke test defined in [`App.java`](playwright-tests/src/main/java/com/mycompany/App.java) to ensure Playwright correctly launches and communicates with a headless browser locally:
 
 ```bash
 mvn compile exec:java -Dexec.mainClass="com.mycompany.App"
@@ -107,7 +107,7 @@ To step through your tests line-by-line and test locators in real-time, execute 
 ---
 
 ### 5. Concurrency & Parallel Execution on the Cloud (`TestMuDemoTest.java`)
-JUnit 5 parallel execution is configured in [`junit-platform.properties`](file:///Users/applebusstop/Documents/tech-writing/technical_writing_projects/test-automation-playwright-java/playwright-tests/src/test/resources/junit-platform.properties). It runs tests concurrently on the TestMu AI cloud grid.
+JUnit 5 parallel execution is configured in [`junit-platform.properties`](playwright-tests/src/test/resources/junit-platform.properties). It runs tests concurrently on the TestMu AI cloud grid.
 
 Set up your LambdaTest access credentials in your terminal:
 - **macOS/Linux:**
