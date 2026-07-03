@@ -6,6 +6,29 @@ It demonstrates how to configure Playwright Java with JUnit 5, build resilient e
 
 ---
 
+## Prerequisites
+
+Before getting started, make sure you have the following installed on your machine:
+- **Java JDK 17** or higher
+- **Apache Maven** 3.8+
+- **Git**
+
+## Getting Started
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/your-username/test-automation-playwright-java.git
+   cd test-automation-playwright-java
+   ```
+
+2. **Navigate to the test project directory:**
+   ```bash
+   cd playwright-tests
+   ```
+
+---
+
+
 ## Repository Structure
 
 The test project is located in the [`playwright-tests/`](file:///Users/applebusstop/Documents/tech-writing/technical_writing_projects/test-automation-playwright-java/playwright-tests/) directory:
