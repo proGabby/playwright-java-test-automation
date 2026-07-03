@@ -158,7 +158,7 @@ mvn test
 
 ### Local Test Output
 The local tests execution results in the terminal:
-![Local Test Results](docs/images/local_test_result.png)
+![Local Test Results](docs/images/local_test_result.jpg)
 
 ### LambdaTest Cloud Grid Dashboard
 Review test video recording playback, network timelines, and console logs from the grid:
