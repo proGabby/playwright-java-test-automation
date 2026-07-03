@@ -4,7 +4,7 @@ This repository contains the companion code for the step-by-step tutorial: **"Te
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Getting Started](#-getting-started)
   - [Prerequisites](#prerequisites)
@@ -16,13 +16,13 @@ This repository contains the companion code for the step-by-step tutorial: **"Te
   - [3. Debug Mode with Playwright Tracing](#3-debug-mode-with-playwright-tracing)
   - [4. Interactive Debugging with Inspector](#4-interactive-debugging-with-inspector)
   - [5. Concurrency & Parallel Execution on the Cloud](#5-concurrency--parallel-execution-on-the-cloud)
-- [🏗️ Project Structure](#️-project-structure)
-- [📊 Test Execution Results](#-test-execution-results)
-- [🔗 Useful Resources](#-useful-resources)
+- [Project Structure](#️-project-structure)
+- [Test Execution Results](#-test-execution-results)
+- [Useful Resources](#-useful-resources)
 
 ---
 
-## 📋 Getting Started
+## Getting Started
 
 ### Prerequisites
 Before getting started, make sure you have the following installed on your machine:
@@ -51,7 +51,7 @@ mvn exec:java -e -Dexec.mainClass=com.microsoft.playwright.CLI -Dexec.args="inst
 
 ---
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```text
 .
@@ -76,7 +76,7 @@ mvn exec:java -e -Dexec.mainClass=com.microsoft.playwright.CLI -Dexec.args="inst
 ---
 
 
-## 🧪 Project Execution: Local vs Cloud
+## Project Execution: Local vs Cloud
 
 ### 1. Installation Verification (Smoke Test)
 Run the simple smoke test defined in [`App.java`](playwright-tests/src/main/java/com/mycompany/App.java) to ensure Playwright correctly launches and communicates with a headless browser locally:
@@ -154,7 +154,7 @@ mvn test
 
 ---
 
-## 📊 Test Execution Results
+## Test Execution Results
 
 ### Local Test Output
 The local tests execution results in the terminal:
@@ -166,7 +166,7 @@ Review test video recording playback, network timelines, and console logs from t
 
 ---
 
-## 🔗 Useful Resources
+## Useful Resources
 
 - [Official Playwright Java Documentation](https://playwright.dev/java/docs/intro)
 - [JUnit 5 User Guide](https://junit.org/junit5/docs/current/user-guide/)
@@ -175,7 +175,7 @@ Review test video recording playback, network timelines, and console logs from t
 
 ---
 
-## 🚀 Ready to Master Playwright Java?
+## Ready to Master Playwright Java?
 
 1. **Clone this repository**
 2. **Follow the tutorial guide to set up local tests**
