@@ -51,6 +51,31 @@ mvn exec:java -e -Dexec.mainClass=com.microsoft.playwright.CLI -Dexec.args="inst
 
 ---
 
+## 🏗️ Project Structure
+
+```text
+.
+├── docs/
+│   └── images/                       # Tutorial screenshots
+├── playwright-tests/
+│   ├── pom.xml                       # Maven configuration & dependencies
+│   ├── src/
+│   │   ├── main/java/com/mycompany/
+│   │   │   └── App.java              # Local browser smoke test
+│   │   └── test/
+│   │       ├── java/com/mycompany/
+│   │       │   ├── PlaywrightDemoTest.java       # Standard local test
+│   │       │   ├── PlaywrightDebugDemoTest.java  # Trace-enabled test
+│   │       │   └── TestMuDemoTest.java           # Cloud grid parallel test
+│   │       └── resources/
+│   │           └── junit-platform.properties     # Parallel execution config
+│   └── target/                       # Maven compilation & trace outputs (Git ignored)
+└── .gitignore                        # Git ignore file (excludes target/)
+```
+
+---
+
+
 ## 🧪 Project Execution: Local vs Cloud
 
 ### 1. Installation Verification (Smoke Test)
@@ -59,6 +84,8 @@ Run the simple smoke test defined in [`App.java`](playwright-tests/src/main/java
 ```bash
 mvn compile exec:java -Dexec.mainClass="com.mycompany.App"
 ```
+
+![Smoke Test Result](docs/images/smoke_test_result.jpg)
 
 ---
 
@@ -69,6 +96,8 @@ Execute the standard search verification test case locally against the LambdaTes
 mvn test -Dtest=PlaywrightDemoTest
 ```
 * **Execution:** A headed Chromium browser will launch, perform a search query for "HTC", verify the results, and automatically close.
+
+![Local Test Result](docs/images/local_test_result.jpg)
 
 ---
 
@@ -101,12 +130,9 @@ To step through your tests line-by-line and test locators in real-time, execute 
   $env:PWDEBUG="1"; mvn test -Dtest=PlaywrightDebugDemoTest
   ```
 
-**Code Generator & Inspector:**
-![Playwright Inspector and Codegen](docs/images/playwright_codegen_inspector.jpg)
-
 ---
 
-### 5. Concurrency & Parallel Execution on the Cloud (`TestMuDemoTest.java`)
+### 5. Parallel Execution on the Cloud (TestMu AI Grid) (`TestMuDemoTest.java`)
 JUnit 5 parallel execution is configured in [`junit-platform.properties`](playwright-tests/src/test/resources/junit-platform.properties). It runs tests concurrently on the TestMu AI cloud grid.
 
 Set up your LambdaTest access credentials in your terminal:
@@ -128,35 +154,11 @@ mvn test
 
 ---
 
-## 🏗️ Project Structure
-
-```text
-.
-├── docs/
-│   └── images/                       # Tutorial screenshots
-├── playwright-tests/
-│   ├── pom.xml                       # Maven configuration & dependencies
-│   ├── src/
-│   │   ├── main/java/com/mycompany/
-│   │   │   └── App.java              # Local browser smoke test
-│   │   └── test/
-│   │       ├── java/com/mycompany/
-│   │       │   ├── PlaywrightDemoTest.java       # Standard local test
-│   │       │   ├── PlaywrightDebugDemoTest.java  # Trace-enabled test
-│   │       │   └── TestMuDemoTest.java           # Cloud grid parallel test
-│   │       └── resources/
-│   │           └── junit-platform.properties     # Parallel execution config
-│   └── target/                       # Maven compilation & trace outputs (Git ignored)
-└── .gitignore                        # Git ignore file (excludes target/)
-```
-
----
-
 ## 📊 Test Execution Results
 
 ### Local Test Output
-The local smoke test and standard tests execution results in the terminal:
-![Local Test Results](docs/images/local_test_results.png)
+The local tests execution results in the terminal:
+![Local Test Results](docs/images/local_test_result.png)
 
 ### LambdaTest Cloud Grid Dashboard
 Review test video recording playback, network timelines, and console logs from the grid:
